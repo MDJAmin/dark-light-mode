@@ -3,21 +3,19 @@
 document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
     const toggleBtn = document.getElementById('toggleBtn');
-    
-    // Check the saved theme from local storage and apply it
-    const currentTheme = localStorage.getItem('theme') || 'light-mode';
+    const currentTheme = localStorage.getItem('theme') || 'a-mode';
     body.classList.add(currentTheme);
-    toggleBtn.textContent = currentTheme === 'light-mode' ? '🌙' : '☀️';
+    toggleBtn.textContent = currentTheme === 'a-mode' ? '🍓' : '🐳';
 
     toggleBtn.addEventListener('click', () => {
-        if (body.classList.contains('light-mode')) {
-            body.classList.replace('light-mode', 'dark-mode');
-            toggleBtn.textContent = '☀️';
-            localStorage.setItem('theme', 'dark-mode');
+        if (body.classList.contains('a-mode')) {
+            body.classList.replace('a-mode', 'm-mode');
+            toggleBtn.textContent = '🐳';
+            localStorage.setItem('theme', 'm-mode');
         } else {
-            body.classList.replace('dark-mode', 'light-mode');
-            toggleBtn.textContent = '🌙';
-            localStorage.setItem('theme', 'light-mode');
+            body.classList.replace('m-mode', 'a-mode');
+            toggleBtn.textContent = '🍓';
+            localStorage.setItem('theme', 'a-mode');
         }
     });
 });
